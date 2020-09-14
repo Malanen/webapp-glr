@@ -31,18 +31,32 @@ body {
     width: 40%;
 }
 
+#flex1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
 footer {
     background-color: black;
     text-align: left;
     padding: 1% 0 10% 5%;
 }
 
-footer input {
+#email {
   width: 75%;
-  color: #454E56;
+  background-color: #454E56;
+  font-weight: 700;
+  height: 35px;
 }
 
-footer p, h2 {
+#signUp {
+    height: 35px;
+    background-color: #454E56;
+    color: white;
+}
+
+footer p, footer h2 {
     color: white;
 }
 
@@ -50,12 +64,10 @@ footer h2 {
     padding-top: 8%;
 }
 
-footer a {
-    color: #0645AD;
+footer p {
+    font-weight: 300;
 }
 
-#flex1 {
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
+footer a {
+    color: #4886EF;
 }
