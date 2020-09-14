@@ -62,17 +62,18 @@ footer {
     padding: 1% 0 10% 5%;
 }
 
-#email {
-  width: 75%;
-  background-color: #454E56;
-  font-weight: 700;
-  height: 35px;
-}
-
 #signUp {
-    height: 35px;
+    padding: 5% 5% 5% 5%;
     background-color: #454E56;
     color: white;
+}
+
+input[type=email] {
+  width: 70%;
+  padding: 5% 5%;
+  margin: 5% 0;
+  box-sizing: border-box;
+  background-color: #454E56;
 }
 
 footer p, footer h2 {
