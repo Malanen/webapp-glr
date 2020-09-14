@@ -26,9 +26,14 @@
         </div>
     </div>
     </div>
-    <section id="contentDemos"></section>
+    <section id="filter" class="page"></section>
     <section class="page" id="home"></section>
     <section id="demos" class="page"></section>
+
+    <!-- Filter -->
+    <div id="filterDiv">
+        <a href="#filter"><img src="img/Filter-icon-sort.png"></a>
+    </div>
 
 
 
@@ -39,7 +44,7 @@
             <h2>Newest demo</h2>
             <p>Share your own skill by directly sharing it to our audience</p>
             <img src="img/demoMemo.png" alt="Demo icon">
-            <a href="#" id="sendDemos" onclick="#">Send demos</a>
+            <a href="#" id="sendDemos" onclick="">Send demos</a>
             <a href="#demos" id="discoverDemos" onclick="showDemos()">Discover demos</a>
         </div>
     </section>
@@ -49,10 +54,11 @@
         <p>Something about us ....</p>
         <h2>Sign up for our newsletter</h2>
         <form>
-            <input type="email" id="email" placeholder="@ your email here ..." required>
-            <button type="button" id="signUp" onclick="">Sign up</button>
+            <input type="email" id="yourEmail" placeholder="@ your email here ..." required>
+            <input type="button" value="Submit" type="submit" onclick="">
         </form>
 
+        <p id="newsLetter"></p>
 
         <h2>Contact us directly</h2>
         <p>Cellphone: <a href="tel:26710392">+45 26 71 03 92</a></p>

@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const songRef = db.collection("songs");
 const demoRef = db.collection("demos");
+const emailRef = db.collection("emails");
 
 let selectedUserId = "";
 
@@ -99,5 +100,23 @@ function createUser() {
     demoRef.add(newUser);
 }
 
-// ========== UPDATE ==========
+// Show Filter Button
 
+window.onscroll = function () {
+    let showFilter = document.querySelector("#filterDiv");
+    let sectionPages = document.querySelector("#home");
+    let offsetTop = sectionPages.getBoundingClientRect("sectionPages").top;
+    if (offsetTop <= 565) {
+        showFilter.style.display = "block";
+    } else {
+        showFilter.style.display = "none";
+    }
+}
+
+//  Toggle Filter
+
+function showFilter() {
+
+}
+
+// ========== UPDATE ==========
