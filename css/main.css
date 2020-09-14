@@ -10,6 +10,7 @@ body {
     margin: 0 auto;
     justify-content: center;
     text-align: center;
+    background-color: #2F2F2F;
 }
 
 #banner {
@@ -41,19 +42,23 @@ body {
     display: flex;
     justify-content: center;
     color: #fff;
-    background-color: #323232;
+    background-color: #2F2F2F;
 }
 
 #bannerDemo {
     background-image: url(../img/glr1.jpg);
     width: 100%;
-    opacity: 60%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 10% 10% 70% 10%;
+    padding: 17% 10% 30% 10%;
     align-items: center;
     background-position: center;
     font-size: 28px;
+}
+
+#bannerDemo img {
+    width: 80%;
+    background-position: center;
 }
 
 footer {
