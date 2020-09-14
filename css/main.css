@@ -1,3 +1,8 @@
 img {
-    width: 100%;;
+    width: 20%;
+}
+body {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
 }

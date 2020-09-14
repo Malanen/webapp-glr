@@ -1,1 +1,95 @@
-alert("Golden Lady Records");
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyD8L3By0UWfxZ8CO9vNZHwDN6Ev553xbcQ",
+    authDomain: "golden-lady-record.firebaseapp.com",
+    databaseURL: "https://golden-lady-record.firebaseio.com",
+    projectId: "golden-lady-record",
+    storageBucket: "golden-lady-record.appspot.com",
+    messagingSenderId: "1026913158705",
+    appId: "1:1026913158705:web:d686f7c2d11e8263f9b710"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
+const db = firebase.firestore();
+const songRef = db.collection("songs");
+const demoRef = db.collection("demos");
+
+let selectedUserId = "";
+
+// ========== READ ==========
+// watch the database ref for changes
+songRef.onSnapshot(function (snapshotData) {
+    let songs = [];
+    snapshotData.forEach(function (doc) {
+        let song = doc.data();
+        console.log(song);
+        song.id = doc.id;
+        songs.push(song);
+    });
+    appendSongs(songs);
+});
+
+// append users to the DOM
+function appendSongs(songs) {
+    let htmlTemplate = "";
+    for (let song of songs) {
+        console.log(song.id);
+        console.log(song.artist);
+        htmlTemplate += `
+    <article>
+      <h2>${song.title}</h2>
+      ${song.soundcloud}
+      <h2>${song.artist}</h2>
+      <h2>${song.genre}</h2>
+    </article>
+    `;
+    }
+    document.querySelector('#content').innerHTML = htmlTemplate;
+}
+
+// ========== CREATE ==========
+// add a new user to firestore (database)
+function createUser() {
+    // references to the input fields
+    let nameInput = document.querySelector('#name');
+    let mailInput = document.querySelector('#mail');
+    console.log(nameInput.value);
+    console.log(mailInput.value);
+
+    let newUser = {
+        name: nameInput.value,
+        mail: mailInput.value
+    };
+
+    userRef.add(newUser);
+}
+
+// ========== UPDATE ==========
+
+function selectUser(id, name, mail) {
+    // references to the input fields
+    let nameInput = document.querySelector('#name-update');
+    let mailInput = document.querySelector('#mail-update');
+    nameInput.value = name;
+    mailInput.value = mail;
+    selectedUserId = id;
+}
+
+function updateUser() {
+    let nameInput = document.querySelector('#name-update');
+    let mailInput = document.querySelector('#mail-update');
+
+    let userToUpdate = {
+        name: nameInput.value,
+        mail: mailInput.value
+    };
+    userRef.doc(selectedUserId).update(userToUpdate);
+}
+
+// ========== DELETE ==========
+function deleteUser(id) {
+    console.log(id);
+    userRef.doc(id).delete();
+}
