@@ -115,6 +115,7 @@ footer a {
 }
 
 #filterDiv {
+    display: none;
     background-color: #ffffff;
     width: 65px;
     height: 65px;
