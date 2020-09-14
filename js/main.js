@@ -31,7 +31,17 @@ songRef.onSnapshot(function (snapshotData) {
     appendSongs(songs);
 });
 
-// append users to the DOM
+demoRef.onSnapshot(function (snapshotData) {
+    let demos = [];
+    snapshotData.forEach(function (doc) {
+        let demo = doc.data();
+        console.log(demo);
+        demo.id = doc.id;
+        demos.push(demo);
+    });
+    appendDemos(demos);
+});
+// append songs to the DOM
 function appendSongs(songs) {
     let htmlTemplate = "";
     for (let song of songs) {
@@ -46,50 +56,48 @@ function appendSongs(songs) {
     </article>
     `;
     }
-    document.querySelector('#content').innerHTML = htmlTemplate;
+    document.querySelector('#contentSongs').innerHTML = htmlTemplate;
 }
+// append demos to the DOM
+function appendDemos(demos) {
+    let htmlTemplate = "";
+    for (let demo of demos) {
+        console.log(demo.id);
+        console.log(demo.artist);
+        htmlTemplate += `
+    <article>
+      <h2>${demo.title}</h2>
+      ${demo.soundcloud}
+      <h2>${demo.artist}</h2>
+      <h2>${demo.genre}</h2>
+    </article>
+    `;
+    }
+    document.querySelector('#contentDemos').innerHTML = htmlTemplate;
+}
+
 
 // ========== CREATE ==========
 // add a new user to firestore (database)
 function createUser() {
     // references to the input fields
-    let nameInput = document.querySelector('#name');
-    let mailInput = document.querySelector('#mail');
-    console.log(nameInput.value);
-    console.log(mailInput.value);
+    let titleInput = document.querySelector('#title');
+    let demoInput = document.querySelector('#demo');
+    let artistInput = document.querySelector('#artist');
+    let genreInput = document.querySelector('#genre')
+    console.log(titleInput.value);
+    console.log(demoInput.value);
+    console.log(artistInput.value);
+    console.log(genreInput.value);
 
     let newUser = {
-        name: nameInput.value,
-        mail: mailInput.value
+        title: titleInput.value,
+        demo: demoInput.value,
+        artist: artistInput.value,
+        genre: genreInput.value
     };
-
-    userRef.add(newUser);
+    demoRef.add(newUser);
 }
 
 // ========== UPDATE ==========
 
-function selectUser(id, name, mail) {
-    // references to the input fields
-    let nameInput = document.querySelector('#name-update');
-    let mailInput = document.querySelector('#mail-update');
-    nameInput.value = name;
-    mailInput.value = mail;
-    selectedUserId = id;
-}
-
-function updateUser() {
-    let nameInput = document.querySelector('#name-update');
-    let mailInput = document.querySelector('#mail-update');
-
-    let userToUpdate = {
-        name: nameInput.value,
-        mail: mailInput.value
-    };
-    userRef.doc(selectedUserId).update(userToUpdate);
-}
-
-// ========== DELETE ==========
-function deleteUser(id) {
-    console.log(id);
-    userRef.doc(id).delete();
-}
