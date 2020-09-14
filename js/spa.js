@@ -1,6 +1,6 @@
 "use strict";
 
-let discoverDemos = document.querySelector("#discoverDemos");
+/*let discoverDemos = document.querySelector("#discoverDemos");
 let homePage = document.querySelector("home");
 let demoPage = document.querySelector("demos");
 
@@ -9,12 +9,13 @@ discoverDemos.addEventListener("click", showDemos);
 
 function showDemos() {
     homePage.style.display = "none";
+    demoPage.style.display = "block";
 
 }
+*/
 
 
 
-/*
 // hide all pages
 function hideAllPages() {
     let pages = document.querySelectorAll(".page");
@@ -66,4 +67,4 @@ function showLoader(show) {
     } else {
         loader.classList.add("hide");
     }
-}*/
+}
