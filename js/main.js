@@ -42,6 +42,8 @@ demoRef.onSnapshot(function (snapshotData) {
     });
     appendDemos(demos);
 });
+
+
 // append songs to the DOM
 function appendSongs(songs) {
     let htmlTemplate = "";
@@ -78,9 +80,6 @@ function appendDemos(demos) {
 }
 
 
-// ========== CREATE ==========
-// add a new user to firestore (database)
-
 
 // Show Filter Button
 
@@ -94,6 +93,9 @@ window.onscroll = function () {
         showFilter.style.display = "none";
     }
 }
+
+
+
 
 //  Toggle Filter
 
@@ -129,6 +131,10 @@ function showFilter() {
 let filterButton = document.querySelector("#filterDiv");
 filterButton.addEventListener("click", showFilter);
 
+
+
+// Send Demo form
+
 function sendDemo() {
     let template = /*html*/ `
   <form id="demoForm">
@@ -163,7 +169,7 @@ function sliderValue() {
 }
 
 
-
+// Send demo and add on firebase.
 
 function createUser() {
     // references to the input fields
@@ -188,6 +194,10 @@ function createUser() {
     demoRef.add(newUser);
 }
 
+
+
+// Sign up to newsletter and add on firebase
+
 function createEmail() {
     // references to the input fields
     let emailInput = document.querySelector("#yourEmail");
@@ -200,7 +210,7 @@ function createEmail() {
 }
 
 
-
+// Remove filter
 
 function noToggleMenu() {
     let filter = document.querySelector("#filter");
@@ -210,4 +220,3 @@ function noToggleMenu() {
     document.body.style.overflowY = "auto";
 }
 
-// ========== UPDATE ==========
