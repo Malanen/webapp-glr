@@ -115,5 +115,8 @@ window.onscroll = function () {
 
 //  Toggle Filter
 
-function showFilter =
+function showFilter() {
 
+}
+
+// ========== UPDATE ==========
