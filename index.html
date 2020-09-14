@@ -26,13 +26,14 @@
         </div>
     </div>
     </div>
-    <section id="filter" class="page"></section>
+    <section id="filter"></section>
     <section class="page" id="home"></section>
+    <section id="sendDemo" class="page"></section>
     <section id="demos" class="page"></section>
 
     <!-- Filter -->
     <div id="filterDiv">
-        <a href="#filter"><img src="img/Filter-icon-sort.png"></a>
+        <a onclick="showFilter()"><img src="img/Filter-icon-sort.png"></a>
     </div>
 
 
@@ -44,7 +45,7 @@
             <h2>Newest demo</h2>
             <p>Share your own skill by directly sharing it to our audience</p>
             <img src="img/demoMemo.png" alt="Demo icon">
-            <a href="#" id="sendDemos" onclick="#">Send demos</a>
+            <a href="#sendDemo" id="sendDemosButton" onclick="sendDemo()">Send demos</a>
             <a href="#demos" id="discoverDemos" onclick="showDemos()">Discover demos</a>
         </div>
     </section>
@@ -55,7 +56,7 @@
         <h2>Sign up for our newsletter</h2>
         <form>
             <input type="email" id="yourEmail" placeholder="@ your email here ..." required>
-            <input type="button" value="Submit" type="submit" onclick="">
+            <input type="button" value="Submit" type="submit" onclick="createEmail(this.value)">
         </form>
 
         <p id="newsLetter"></p>

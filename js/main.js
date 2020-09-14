@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const songRef = db.collection("songs");
 const demoRef = db.collection("demos");
-const emailRef = db.collection("emails");
+const emailRef = db.collection("email");
 
 let selectedUserId = "";
 
@@ -80,25 +80,7 @@ function appendDemos(demos) {
 
 // ========== CREATE ==========
 // add a new user to firestore (database)
-function createUser() {
-    // references to the input fields
-    let titleInput = document.querySelector('#title');
-    let demoInput = document.querySelector('#demo');
-    let artistInput = document.querySelector('#artist');
-    let genreInput = document.querySelector('#genre')
-    console.log(titleInput.value);
-    console.log(demoInput.value);
-    console.log(artistInput.value);
-    console.log(genreInput.value);
 
-    let newUser = {
-        title: titleInput.value,
-        demo: demoInput.value,
-        artist: artistInput.value,
-        genre: genreInput.value
-    };
-    demoRef.add(newUser);
-}
 
 // Show Filter Button
 
@@ -116,7 +98,103 @@ window.onscroll = function () {
 //  Toggle Filter
 
 function showFilter() {
+    let filter = document.querySelector("#filter")
+    document.body.style.overflowY = "hidden";
+    filter.style.display = "block";
+    filter.classList.add("slide-in-bottom");
+    filter.classList.remove("slide-out-bottom");
+    let template = /*html*/ `
+    <input type="text" id="searchBar" placeholder="Search">
+    <button id="closemenu" onclick="noToggleMenu()">X</button>
+    <h2>Genre</h2>
+    <div>
+    <a onclick="changeColor()"><p>House</p></a>
+    <a onclick="changeColor()"><p>Deep House</p></a>
+    <a onclick="changeColor()"><p>Rap</p></a>
+    <a onclick="changeColor()"><p>HipHop</p></a>
+    <a onclick="changeColor()"><p>Techno</p></a>
+    <a onclick="changeColor()"><p>Psytrance</p></a>
+    </div>
+    <h2>Releases</h2>
+    <div>
+    <a onclick="changeColor()"><p>New Releases</p></a>
+    <a onclick="changeColor()"><p>Popular Releases</p></a>
+    </div>
+    <div class="slidecontainer">
+    <input type="range" min="1" max="200" value="100" class="slider" id="myRange">
+    </div>
+    `;
+    document.querySelector("#filter").innerHTML = template;
+}
+let filterButton = document.querySelector("#filterDiv");
+filterButton.addEventListener("click", showFilter);
 
+function sendDemo() {
+    let template = /*html*/ `
+  <form id="demoForm">
+    <h2>Send your demo</h2>
+    <input type="text" id="name" placeholder="Artist name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="title" placeholder="Title" required>
+    <input type="text" id="soundcloud" placeholder="embedded soundcloud track" required><a href="https://help.soundcloud.com/hc/en-us/articles/115003568008-Embedding-a-track-or-playlist-" target="_blank">?</a>
+    <select name="genre" id="genre">
+     <option value="house" class="class">House</option>
+      <option value="techno" class="class">Techno</option>
+      <option value="deephouse" class="class">Deephouse</option>
+      <option value="techhouse" class="class">Techhouse</option>
+      <option value="trance" class="class">Trance</option>
+      <option value="rap" class="class">Rap</option>
+      <option value="other" class="class">Other</option>
+    </select>
+    <input type="range" min="1" max="200" value="100" class="slider" id="bpmRange">
+    <button type="button" name="button" onclick="createUser()">Create User</button>
+  </form>
+  `
+    document.querySelector("#sendDemo").innerHTML = template;
+}
+function createUser() {
+    // references to the input fields
+    let titleInput = document.querySelector("#title");
+    let demoInput = document.querySelector('#soundcloud');
+    let artistInput = document.querySelector('#name');
+    let genreInput = document.querySelector('#genre');
+    let bpmInput = document.querySelector('#bpmRange');
+    console.log(titleInput.value);
+    console.log(demoInput.value);
+    console.log(artistInput.value);
+    console.log(genreInput.value);
+    console.log(bpmInput.value);
+
+    let newUser = {
+        title: titleInput.value,
+        soundcloud: demoInput.value,
+        artist: artistInput.value,
+        genre: genreInput.value,
+        BPM: bpmInput.value
+    };
+    demoRef.add(newUser);
+}
+
+function createEmail() {
+    // references to the input fields
+    let emailInput = document.querySelector("#yourEmail");
+    let newEmail = {
+        email: emailInput.value,
+    };
+    emailRef.add(newEmail);
+    emailInput.value = "Thanks!";
+
+}
+
+
+
+
+function noToggleMenu() {
+    let filter = document.querySelector("#filter");
+    filter.classList.remove("slide-in-bottom");
+    filter.style.display = "none";
+    filter.classList.add("slide-out-bottom");
+    document.body.style.overflowY = "auto";
 }
 
 // ========== UPDATE ==========
