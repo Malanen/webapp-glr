@@ -1,11 +1,17 @@
+p, h1, h2, h3, h4, a {
+    font-family: 'Roboto', sans-serif;
+}
+
 img {
     width: 20%;
 }
+
 body {
     margin: 0 auto;
     justify-content: center;
     text-align: center;
 }
+
 #banner {
     background-image: url(../img/glr2.jpg);
     width: 100%;
@@ -14,7 +20,6 @@ body {
     padding-bottom: 20%;
    align-items: center;
    background-position: center;
-
 }
 
 #logo {
@@ -51,3 +56,37 @@ body {
     font-size: 28px;
 }
 
+footer {
+    background-color: black;
+    text-align: left;
+    padding: 1% 0 10% 5%;
+}
+
+#email {
+  width: 75%;
+  background-color: #454E56;
+  font-weight: 700;
+  height: 35px;
+}
+
+#signUp {
+    height: 35px;
+    background-color: #454E56;
+    color: white;
+}
+
+footer p, footer h2 {
+    color: white;
+}
+
+footer h2 {
+    padding-top: 8%;
+}
+
+footer p {
+    font-weight: 300;
+}
+
+footer a {
+    color: #4886EF;
+}

@@ -56,7 +56,7 @@ function appendSongs(songs) {
     </article>
     `;
     }
-    document.querySelector('#contentSongs').innerHTML = htmlTemplate;
+    document.querySelector('#home').innerHTML = htmlTemplate;
 }
 // append demos to the DOM
 function appendDemos(demos) {
@@ -73,7 +73,7 @@ function appendDemos(demos) {
     </article>
     `;
     }
-    document.querySelector('#contentDemos').innerHTML = htmlTemplate;
+    document.querySelector('#demos').innerHTML = htmlTemplate;
 }
 
 
