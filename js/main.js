@@ -146,12 +146,25 @@ function sendDemo() {
       <option value="rap" class="class">Rap</option>
       <option value="other" class="class">Other</option>
     </select>
-    <input type="range" min="1" max="200" value="100" class="slider" id="bpmRange">
+    <div class="slidecontainer">
+  <input type="range" min="1" max="200" value="100" class="slider" id="bpmRange" oninput="sliderValue()">
+  <p>BPM: <span id="bpmValue"></span></p>
+</div
     <button type="button" name="button" onclick="createUser()">Create User</button>
   </form>
   `
     document.querySelector("#sendDemo").innerHTML = template;
 }
+
+function sliderValue() {
+    let slider = document.getElementById("bpmRange").value
+    let output = document.getElementById("bpmValue");
+    output.innerHTML = slider;
+}
+
+
+
+
 function createUser() {
     // references to the input fields
     let titleInput = document.querySelector("#title");

@@ -50,7 +50,7 @@ body {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 17% 10% 30% 10%;
+    padding: 10% 10% 30% 10%;
     align-items: center;
     background-position: center;
     font-size: 28px;
@@ -58,7 +58,24 @@ body {
 
 #bannerDemo img {
     width: 80%;
-    background-position: center;
+}
+
+#bannerDemo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.demoBtn {
+    display: inline-block;
+  width: 200px;
+  padding: 8px;
+  margin: 10px 0 0 0;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
 }
 
 footer {
