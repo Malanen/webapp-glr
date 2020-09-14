@@ -1,11 +1,17 @@
+p, h1, h2, h3, h4, a {
+    font-family: 'Roboto', sans-serif;
+}
+
 img {
     width: 20%;
 }
+
 body {
     margin: 0 auto;
     justify-content: center;
     text-align: center;
 }
+
 #banner {
     background-image: url(../img/glr2.jpg);
     width: 100%;
@@ -14,10 +20,32 @@ body {
     padding-bottom: 50%;
    align-items: center;
    background-position: center;
-
 }
 
 #logo {
     margin-top: 40%;
     width: 40%;
+}
+
+footer {
+    background-color: black;
+    text-align: left;
+    padding: 1% 0 10% 5%;
+}
+
+footer input {
+  width: 75%;
+  color: #454E56;
+}
+
+footer p, h2 {
+    color: white;
+}
+
+footer h2 {
+    padding-top: 8%;
+}
+
+footer a {
+    color: #0645AD;
 }
