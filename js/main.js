@@ -175,7 +175,8 @@ function showFilter() {
     <a onclick="changeColor(this)" class="notselected releaseBtn"><p>Popular Releases</p></a>
     </div>
     <div class="slidecontainer">
-    <input type="range" min="1" max="200" value="100" class="slider" id="myRange">
+    <input type="range" min="1" max="200" value="100" class="slider" id="myRange" oninput="sliderValueFilter()">
+    <p>BPM: <span id="bpmValueFilter"></span></p>
     </div>
     `;
     document.querySelector("#filter").innerHTML = template;
@@ -232,6 +233,12 @@ function sliderValue() {
     let output = document.getElementById("bpmValue");
     output.innerHTML = slider;
 }
+function sliderValueFilter() {
+    let slider = document.getElementById("myRange").value
+    let output = document.getElementById("bpmValueFilter");
+    output.innerHTML = slider;
+}
+
 
 
 // Send demo and add on firebase.
