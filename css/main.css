@@ -175,6 +175,7 @@ footer a {
 }
 
 #filter {
+    z-index: 1;
     display: none;
     background-color: #3b3b3b;
     width: 100vw;
