@@ -82,7 +82,7 @@ body {
 
 #yourEmail {
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 10%;
     padding: 5% 5% 5% 5%;
     outline: 0;
     background-color: #454E56;
@@ -90,7 +90,7 @@ body {
 
 #emailBtn {
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 10%;
     padding: 5% 5% 5% 5%;
     outline: 0;
     color: white;
@@ -99,11 +99,21 @@ body {
 
 #closeSendDemo {
       border: 1px solid grey;
+    border-radius: 10%;
+    padding: 3% 3% 3% 3%;
+    margin: 0% 0% 0% 30%;
+    position: absolute;
+    outline: 0;
+    background-color: #454E56;
+    color: white;
+}
+
+.demoBox {
+      border: 1px solid grey;
     border-radius: 5px;
     padding: 5% 5% 5% 5%;
     outline: 0;
     background-color: #454E56;
-    color: white;
 }
 
 .demoBtn {
