@@ -91,8 +91,11 @@ text-decoration: none;
 }
 
 #sendDemo {
+  background-color: #2F2F2F;
   height: 100vh;
-  
+  z-index: 1;
+  position: fixed;
+  top: 0;
 }
 
 footer {
@@ -107,12 +110,68 @@ footer {
     color: white;
 }
 
+
 input[type=email] {
   width: 70%;
   padding: 5% 5%;
   margin: 5% 0;
   box-sizing: border-box;
   background-color: #454E56;
+  font-size: 1em;
+  color: white;
+}
+
+#demoForm {
+  color: white;
+}
+#demoForm h2{
+  color: white;
+  margin-top: 10%;
+}
+
+#helpBtn{
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  margin: 7.5% 0 0 3%;
+}
+#sendBtn{
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding: 3%;
+}
+.slidecontainer {
+  margin-bottom: 10%;
+  margin-top: 8%;
+}
+
+#demoForm input[type=email] {
+  margin: 2.5% 0;
+  
+}
+input[type=text] {
+  width: 70%;
+  padding: 5% 5%;
+  margin: 2.5% 0;
+  box-sizing: border-box;
+  background-color: #454E56;
+  font-size: 1em;
+  color: white; 
+}
+#genre {
+  width: 70%;
+  padding: 5% 5%;
+  margin: 2.5% 0;
+  box-sizing: border-box;
+  background-color: #454E56;
+  font-size: 1em; 
+  color: white;
+}
+
+#bpmRange {
+  
 }
 
 footer p, footer h2 {
@@ -150,9 +209,9 @@ footer a {
 
 .slider {
   -webkit-appearance: none;
-  width: 100%;
+  width: 70%;
   height: 25px;
-  background: #d3d3d3;
+  background-color: #454E56;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
