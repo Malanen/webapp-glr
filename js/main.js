@@ -219,9 +219,10 @@ function createUser() {
 
 function createEmail() {
     // references to the input fields
+    let emailDemoInput = document.querySelector("#email");
     let emailInput = document.querySelector("#yourEmail");
     let newEmail = {
-        email: emailInput.value,
+        email: emailInput.value || emailDemoInput.value,
     };
     emailRef.add(newEmail);
     emailInput.value = "Thanks!";
@@ -230,7 +231,6 @@ function createEmail() {
 
 
 // Remove filter
-
 function noToggleMenu() {
     let filter = document.querySelector("#filter");
     filter.classList.remove("slide-in-bottom");
