@@ -12,6 +12,7 @@ body {
     text-align: center;
     background-color: #2F2F2F;
     color: white;
+    overflow-x: hidden;
 }
 
 .no-js #loader { display: none;  }
