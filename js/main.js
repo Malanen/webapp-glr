@@ -207,14 +207,14 @@ function sendDemo() {
     <input class="demoBox" type="text" id="title" placeholder="Title" required>
     <input class="demoBox" type="text" id="soundcloud" placeholder="Embedded soundcloud link" required><a href="https://help.soundcloud.com/hc/en-us/articles/115003568008-Embedding-a-track-or-playlist-" target="_blank" id="helpBtn">?</a>
     <select name="genre" id="genre" class="demoBox">
-    <option value="genre" class="class">Genre</option>
-     <option value="house" class="class">House</option>
-      <option value="techno" class="class">Techno</option>
-      <option value="deephouse" class="class">Deephouse</option>
-      <option value="techhouse" class="class">Techhouse</option>
-      <option value="trance" class="class">Trance</option>
-      <option value="rap" class="class">Rap</option>
-      <option value="other" class="class">Other</option>
+    <option value="Genre" class="class">Genre</option>
+     <option value="House" class="class">House</option>
+      <option value="Techno" class="class">Techno</option>
+      <option value="Deephouse" class="class">Deephouse</option>
+      <option value="Techhouse" class="class">Techhouse</option>
+      <option value="Trance" class="class">Trance</option>
+      <option value="Rap" class="class">Rap</option>
+      <option value="Other" class="class">Other</option>
     </select>
     <div class="slidecontainer">
   <input type="range" min="1" max="200" value="100" class="slider" id="bpmRange" oninput="sliderValue()">
