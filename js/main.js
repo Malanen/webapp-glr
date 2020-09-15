@@ -157,8 +157,9 @@ function sendDemo() {
     <input type="text" id="name" placeholder="Artist name" required>
     <input type="email" id="email" placeholder="Email" required>
     <input type="text" id="title" placeholder="Title" required>
-    <input type="text" id="soundcloud" placeholder="embedded soundcloud track" required><a href="https://help.soundcloud.com/hc/en-us/articles/115003568008-Embedding-a-track-or-playlist-" target="_blank">?</a>
+    <input type="text" id="soundcloud" placeholder="embedded soundcloud track" required><a href="https://help.soundcloud.com/hc/en-us/articles/115003568008-Embedding-a-track-or-playlist-" target="_blank" id="helpBtn">?</a>
     <select name="genre" id="genre">
+    <option value="genre" class="class">Genre</option>
      <option value="house" class="class">House</option>
       <option value="techno" class="class">Techno</option>
       <option value="deephouse" class="class">Deephouse</option>
@@ -170,12 +171,12 @@ function sendDemo() {
     <div class="slidecontainer">
   <input type="range" min="1" max="200" value="100" class="slider" id="bpmRange" oninput="sliderValue()">
   <p>BPM: <span id="bpmValue"></span></p>
-</div
-    <button type="button" name="button" onclick="createUser()">Create User</button>
+</div>
+    <a href="#demos" type="button" name="button" onclick="createUser()" id="sendBtn">Send Demo</a>
   </form>
   `
     document.querySelector("#sendDemo").innerHTML = template;
-    window.location.href = "#sendDemo"
+    document.body.style.overflowY = "hidden";
 }
 
 function sliderValue() {
@@ -208,6 +209,7 @@ function createUser() {
         BPM: bpmInput.value
     };
     demoRef.add(newUser);
+    document.body.style.overflowY = "auto";
 }
 
 
