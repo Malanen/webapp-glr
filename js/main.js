@@ -44,7 +44,7 @@ demoRef.onSnapshot(function (snapshotData) {
 });
 
 // loading screen 
-$(window).load(function() {
+$(window).load(function () {
     // Animate loader off screen
     $("#loader").fadeOut("slow");;
 });
@@ -153,6 +153,7 @@ function changeColor(element) {
 function sendDemo() {
     let template = /*html*/ `
   <form id="demoForm">
+    <button id="closeSendDemo">X</button>
     <h2>Send your demo</h2>
     <input type="text" id="name" placeholder="Artist name" required>
     <input type="email" id="email" placeholder="Email" required>
