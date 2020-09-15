@@ -91,12 +91,24 @@ text-decoration: none;
 border-radius: 10%;
 }
 
+.selected {
+  background-color: white;
+  color: #2f2f2f;
+  border-color: #2f2f2f;
+  font-weight: 600;
+}
+
+.releaseBtn {
+  padding: 0 8% 0 8%;
+  border-radius: 5%;
+}
+
 #searchBar {
   margin-top: 5%;
 }
 
 #myRange {
-  width: 80%;
+  width: 90%;
 }
 
 #sendDemo {
@@ -158,10 +170,9 @@ input[type=email] {
 
 #demoForm input[type=email] {
   margin: 2.5% 0;
-  
 }
 
-input[type=text] {
+#demoForm input[type=text] {
   width: 70%;
   padding: 5% 5%;
   margin: 2.5% 0;
@@ -183,17 +194,34 @@ input[type=text] {
 #filter h2 {
   margin: 6% 0 2% 0;
   color: white;
-}
-
-#searchBar {
-  padding: 2.5%;
+  font-weight: 400;
 }
 
 #closemenu {
   position: absolute;
-  margin: 5.5% 0% 0 3%;
-  padding: 2.5%;
+  margin: 5.5% 0% 0 2%;
+  font-size: 1.5em;
+  padding: 1% 3% 1% 3%;
+  color: #757575;
+  box-shadow: none;
+  border: 1px solid grey;
+  border-radius: 10%;
+  background-color: #454E56;
 }
+
+.search {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    padding: 5% 5% 5% 5%;
+    outline: 0;
+    width: 70%;
+    margin: 2.5% 0;
+    box-sizing: border-box;
+    background-color: #454E56;
+    font-size: 1em;
+  }
 
 footer p, footer h2 {
     color: white;
@@ -336,9 +364,4 @@ footer a {
 
 .mobilePrestitial__wrapper {
   display: none;
-}
-
-.selected {
-  color: orange;
-  border-color: orange;
 }
