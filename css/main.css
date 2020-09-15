@@ -90,6 +90,11 @@ outline: none;
 text-decoration: none;
 }
 
+#sendDemo {
+  height: 100vh;
+  
+}
+
 footer {
     background-color: black;
     text-align: left;
