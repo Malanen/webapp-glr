@@ -170,6 +170,7 @@ function sendDemo() {
   </form>
   `
     document.querySelector("#sendDemo").innerHTML = template;
+    window.location.href = "#sendDemo"
 }
 
 function sliderValue() {
