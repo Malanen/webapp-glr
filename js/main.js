@@ -17,20 +17,20 @@ const songRef = db.collection("songs");
 const demoRef = db.collection("demos");
 const emailRef = db.collection("email");
 
-let selectedUserId = "";
-
+let _selectedUserId = "";
+let _songs = [];
 // ========== READ ==========
 // watch the database ref for changes
 songRef.onSnapshot(function (snapshotData) {
-    let songs = [];
     snapshotData.forEach(function (doc) {
         let song = doc.data();
         console.log(song);
         song.id = doc.id;
-        songs.push(song);
+        _songs.push(song);
     });
-    appendSongs(songs);
+    appendSongs(_songs);
 });
+
 
 demoRef.onSnapshot(function (snapshotData) {
     let demos = [];
@@ -52,7 +52,8 @@ $(window).load(function () {
 // append songs to the DOM
 function appendSongs(songs) {
     let htmlTemplate = "";
-    for (let song of songs) {
+    for (let index = 0; index < 3; index++) {
+        let song = _songs[index];
         console.log(song.id);
         console.log(song.artist);
         htmlTemplate += `
@@ -62,10 +63,56 @@ function appendSongs(songs) {
       <h2>${song.artist}</h2>
       <h2>${song.genre}</h2>
     </article>
-    `;
+    `; 
+    
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
+
+function showMore(songs) {
+    let htmlTemplate = "";
+    for (let index = 3; index < _songs.length; index++) {
+        let song = _songs[index];
+        console.log(song.id);
+        console.log(song.artist);
+        htmlTemplate += `
+    <article>
+      <h2>${song.title}</h2>
+      ${song.soundcloud}
+      <h2>${song.artist}</h2>
+      <h2>${song.genre}</h2>
+    </article>
+    `; 
+    
+    }
+    document.querySelector('#home').innerHTML += htmlTemplate;
+}
+
+function showLess(songs) {
+    let htmlTemplate = "";
+    for (let index = 0; index < 3; index++) {
+        let song = _songs[index];
+        console.log(song.id);
+        console.log(song.artist);
+        htmlTemplate += `
+    <article>
+      <h2>${song.title}</h2>
+      ${song.soundcloud}
+      <h2>${song.artist}</h2>
+      <h2>${song.genre}</h2>
+    </article>
+    `; 
+    
+    }
+    document.querySelector('#home').innerHTML = htmlTemplate;
+}
+
+
+//show more show less
+
+
+
+
 // append demos to the DOM
 function appendDemos(demos) {
     let htmlTemplate = "";

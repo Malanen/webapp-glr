@@ -83,7 +83,6 @@ body {
 
 #yourEmail {
     border: 1px solid grey;
-    border-radius: 10%;
     padding: 5% 5% 5% 5%;
     outline: 0;
     background-color: #454E56;
@@ -91,8 +90,7 @@ body {
 
 #emailBtn {
     border: 1px solid grey;
-    border-radius: 10%;
-    padding: 5% 5% 5% 5%;
+    padding: 5.5% 5% 5.3% 5%;
     outline: 0;
     color: white;
     background-color: #454E56;
