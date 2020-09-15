@@ -63,8 +63,8 @@ function appendSongs(songs) {
       <h2>${song.artist}</h2>
       <h2>${song.genre}</h2>
     </article>
-    `; 
-    
+    `;
+
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
@@ -82,8 +82,8 @@ function showMore(songs) {
       <h2>${song.artist}</h2>
       <h2>${song.genre}</h2>
     </article>
-    `; 
-    
+    `;
+
     }
     document.querySelector('#home').innerHTML += htmlTemplate;
 }
@@ -101,8 +101,8 @@ function showLess(songs) {
       <h2>${song.artist}</h2>
       <h2>${song.genre}</h2>
     </article>
-    `; 
-    
+    `;
+
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
@@ -200,7 +200,7 @@ function changeColor(element) {
 function sendDemo() {
     let template = /*html*/ `
   <form id="demoForm">
-    <a href="#home" id="closeSendDemo">X</a>
+    <a href="#home" id="closeSendDemo" onclick="goBack()">X</a>
     <h2>Send your demo</h2>
     <input class="demoBox" type="text" id="name" placeholder="Artist name" required>
     <input class="demoBox" type="email" id="email" placeholder="Email" required>
@@ -290,6 +290,9 @@ function noToggleMenu() {
     filter.classList.remove("slide-in-bottom");
     filter.style.display = "none";
     filter.classList.add("slide-out-bottom");
+    document.body.style.overflowY = "auto";
+}
+function goBack() {
     document.body.style.overflowY = "auto";
 }
 
