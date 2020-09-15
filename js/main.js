@@ -111,8 +111,8 @@ function showFilter() {
     filter.classList.add("slide-in-bottom");
     filter.classList.remove("slide-out-bottom");
     let template = /*html*/ `
-    <input type="text" id="searchBar" placeholder="Search">
-    <button id="closemenu" onclick="noToggleMenu()">X</button>
+    <input class="search" type="text" id="searchBar" placeholder="Search">
+    <a id="closemenu" onclick="noToggleMenu()">x</a>
     <h2>Genre</h2>
     <div>
     <a onclick="changeColor(this)" class="notselected"><p>House</p></a>
@@ -124,8 +124,8 @@ function showFilter() {
     </div>
     <h2>Releases</h2>
     <div>
-    <a onclick="changeColor(this)" class="notselected"><p>New Releases</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>Popular Releases</p></a>
+    <a onclick="changeColor(this)" class="notselected releaseBtn"><p>New Releases</p></a>
+    <a onclick="changeColor(this)" class="notselected releaseBtn"><p>Popular Releases</p></a>
     </div>
     <div class="slidecontainer">
     <input type="range" min="1" max="200" value="100" class="slider" id="myRange">
@@ -155,11 +155,11 @@ function sendDemo() {
   <form id="demoForm">
     <button id="closeSendDemo">X</button>
     <h2>Send your demo</h2>
-    <input type="text" id="name" placeholder="Artist name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="text" id="title" placeholder="Title" required>
-    <input type="text" id="soundcloud" placeholder="embedded soundcloud track" required><a href="https://help.soundcloud.com/hc/en-us/articles/115003568008-Embedding-a-track-or-playlist-" target="_blank" id="helpBtn">?</a>
-    <select name="genre" id="genre">
+    <input class="demoBox" type="text" id="name" placeholder="Artist name" required>
+    <input class="demoBox" type="email" id="email" placeholder="Email" required>
+    <input class="demoBox" type="text" id="title" placeholder="Title" required>
+    <input class="demoBox" type="text" id="soundcloud" placeholder="Embedded soundcloud link" required><a href="https://help.soundcloud.com/hc/en-us/articles/115003568008-Embedding-a-track-or-playlist-" target="_blank" id="helpBtn">?</a>
+    <select name="genre" id="genre" class="demoBox">
     <option value="genre" class="class">Genre</option>
      <option value="house" class="class">House</option>
       <option value="techno" class="class">Techno</option>
