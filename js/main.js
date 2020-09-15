@@ -113,7 +113,7 @@ function showFilter() {
     <a onclick="changeColor(this)" class="notselected"><p>House</p></a>
     <a onclick="changeColor(this)" class="notselected"><p>Deep House</p></a>
     <a onclick="changeColor(this)" class="notselected"><p>Rap</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>HipHop</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>Tech House</p></a>
     <a onclick="changeColor(this)" class="notselected"><p>Techno</p></a>
     <a onclick="changeColor(this)" class="notselected"><p>Psytrance</p></a>
     </div>

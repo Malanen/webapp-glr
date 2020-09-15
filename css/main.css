@@ -78,6 +78,18 @@ body {
   text-decoration: none;
 }
 
+.notselected, .selected {
+  display: inline-block;
+width: 100px;
+padding: 5px;
+margin: 10px 10px 10px 10px;
+color: #fff;
+border: 2px solid #fff;
+text-align: center;
+outline: none;
+text-decoration: none;
+}
+
 footer {
     background-color: black;
     text-align: left;
@@ -242,4 +254,5 @@ footer a {
 
 .selected {
   color: orange;
+  border-color: orange;
 }
