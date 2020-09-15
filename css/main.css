@@ -81,13 +81,22 @@ body {
 .notselected, .selected {
   display: inline-block;
 width: 100px;
-padding: 5px;
-margin: 10px 10px 10px 10px;
+padding: 0;
+margin: 2% 2% 2% 2%;
 color: #fff;
 border: 2px solid #fff;
 text-align: center;
 outline: none;
 text-decoration: none;
+border-radius: 10%;
+}
+
+#searchBar {
+  margin-top: 5%;
+}
+
+#myRange {
+  width: 80%;
 }
 
 #sendDemo {
@@ -151,6 +160,7 @@ input[type=email] {
   margin: 2.5% 0;
   
 }
+
 input[type=text] {
   width: 70%;
   padding: 5% 5%;
@@ -170,8 +180,19 @@ input[type=text] {
   color: white;
 }
 
-#bpmRange {
-  
+#filter h2 {
+  margin: 6% 0 2% 0;
+  color: white;
+}
+
+#searchBar {
+  padding: 2.5%;
+}
+
+#closemenu {
+  position: absolute;
+  margin: 5.5% 0% 0 3%;
+  padding: 2.5%;
 }
 
 footer p, footer h2 {
@@ -227,7 +248,7 @@ footer a {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #4CAF50;
+  background-color: white;
   cursor: pointer;
 }
 
