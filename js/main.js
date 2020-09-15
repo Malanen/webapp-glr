@@ -153,7 +153,7 @@ function changeColor(element) {
 function sendDemo() {
     let template = /*html*/ `
   <form id="demoForm">
-    <button id="closeSendDemo">X</button>
+    <a href="#home" id="closeSendDemo">X</a>
     <h2>Send your demo</h2>
     <input class="demoBox" type="text" id="name" placeholder="Artist name" required>
     <input class="demoBox" type="email" id="email" placeholder="Email" required>
@@ -173,7 +173,7 @@ function sendDemo() {
   <input type="range" min="1" max="200" value="100" class="slider" id="bpmRange" oninput="sliderValue()">
   <p>BPM: <span id="bpmValue"></span></p>
 </div>
-    <a href="#demos" type="button" name="button" onclick="createUser()" id="sendBtn">Send Demo</a>
+    <a href="#demos" type="button" name="button" onclick="createEmailDemo(), createUser()" id="sendBtn">Send Demo</a>
   </form>
   `
     document.querySelector("#sendDemo").innerHTML = template;
@@ -219,14 +219,21 @@ function createUser() {
 
 function createEmail() {
     // references to the input fields
-    let emailDemoInput = document.querySelector("#email");
     let emailInput = document.querySelector("#yourEmail");
     let newEmail = {
-        email: emailInput.value || emailDemoInput.value,
+        email: emailInput.value,
     };
     emailRef.add(newEmail);
     emailInput.value = "Thanks!";
+}
 
+function createEmailDemo() {
+    // references to the input fields
+    let emailDemoInput = document.querySelector("#email");
+    let newEmail = {
+        email: emailDemoInput.value,
+    };
+    emailRef.add(newEmail);
 }
 
 
