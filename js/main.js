@@ -46,7 +46,7 @@ demoRef.onSnapshot(function (snapshotData) {
 // loading screen 
 $(window).load(function() {
     // Animate loader off screen
-    $("#loader").fadeOut("slow");;
+    $("#loader").fadeOut("slow");
 });
 
 // append songs to the DOM
