@@ -110,17 +110,17 @@ function showFilter() {
     <button id="closemenu" onclick="noToggleMenu()">X</button>
     <h2>Genre</h2>
     <div>
-    <a onclick="changeColor()"><p>House</p></a>
-    <a onclick="changeColor()"><p>Deep House</p></a>
-    <a onclick="changeColor()"><p>Rap</p></a>
-    <a onclick="changeColor()"><p>HipHop</p></a>
-    <a onclick="changeColor()"><p>Techno</p></a>
-    <a onclick="changeColor()"><p>Psytrance</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>House</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>Deep House</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>Rap</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>HipHop</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>Techno</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>Psytrance</p></a>
     </div>
     <h2>Releases</h2>
     <div>
-    <a onclick="changeColor()"><p>New Releases</p></a>
-    <a onclick="changeColor()"><p>Popular Releases</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>New Releases</p></a>
+    <a onclick="changeColor(this)" class="notselected"><p>Popular Releases</p></a>
     </div>
     <div class="slidecontainer">
     <input type="range" min="1" max="200" value="100" class="slider" id="myRange">
@@ -132,6 +132,16 @@ let filterButton = document.querySelector("#filterDiv");
 filterButton.addEventListener("click", showFilter);
 
 
+function changeColor(element) {
+    if (element.classList.contains("notselected")) {
+        element.classList.remove("notselected");
+        element.classList.add("selected");
+    } else if (element.classList.contains("selected")) {
+        element.classList.remove("selected");
+        element.classList.add("notselected");
+    }
+
+}
 
 // Send Demo form
 

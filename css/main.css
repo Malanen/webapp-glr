@@ -235,3 +235,11 @@ footer a {
     opacity: 0;
   }
 }
+
+.mobilePrestitial__wrapper {
+  display: none;
+}
+
+.selected {
+  color: orange;
+}
