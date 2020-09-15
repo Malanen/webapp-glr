@@ -61,6 +61,13 @@ function appendSongs(songs) {
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
+
+//show more show less
+songRef.limit(3)
+
+
+
+
 // append demos to the DOM
 function appendDemos(demos) {
     let htmlTemplate = "";
@@ -78,6 +85,7 @@ function appendDemos(demos) {
     }
     document.querySelector('#demos').innerHTML = htmlTemplate;
 }
+
 
 
 
