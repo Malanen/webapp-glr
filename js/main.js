@@ -118,31 +118,6 @@ function showLess(songs) {
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
 
-/*function show() {
-    let show = document.getElementById("showMore");
-    let showTwo = document.getElementById("showLess")
-  if (show.style.display === "block") {
-    show.style.display = "none";
-    showTwo.style.display = "block";
-  } else if (showTwo.style.display === "block") {
-    showTwo.style.display = "none";
-    show.style.display = "block";
-  }
-} */
-   let _show = document.getElementById("showMore");
-    let _showTwo = document.getElementById("showLess");
-
-function show() {
-    if (_show.style.display === "block") {
-        _show.style.display = "none";
-        _showTwo.style.display = "block";
-} else if (_showTwo.style.display === "block"){
-    _showTwo.style.display = "none";
-    _show.style.display = "block";
-}
-}
-
-
 
 
 
@@ -341,15 +316,4 @@ function goBack() {
     document.body.style.overflowY = "auto";
 }
 
-
-
-// Search
-
-function search() {
-    value = document.querySelector(".search").value
-    let searchValue = value.toLowerCase();
-    let filteredSongs = this._songs.filter(song => song.title.toLowerCase().includes(searchValue));
-    console.log(searchValue);
-    this.appendSongs(filteredSongs);
-}
 
