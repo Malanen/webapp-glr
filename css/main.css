@@ -272,6 +272,7 @@ input[type=email] {
     box-sizing: border-box;
     background-color: #454E56;
     font-size: 1em;
+    color: white;
   }
 
 footer p, footer h2 {
