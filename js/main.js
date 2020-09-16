@@ -44,20 +44,20 @@ demoRef.onSnapshot(function (snapshotData) {
 });
 
 // loading screen 
-(function(){
+(function () {
     var loading = document.getElementById("loading"),
 
-      show = function(){
-        loading.style.display = "block";
-        setTimeout(hide, 2000); // 5 seconds
-      },
+        show = function () {
+            loading.style.display = "block";
+            setTimeout(hide, 2000); // 5 seconds
+        },
 
-      hide = function(){
-        loading.style.display = "none";
-      };
+        hide = function () {
+            loading.style.display = "none";
+        };
 
     show();
-  })();
+})();
 
 
 // append songs to the DOM
@@ -169,7 +169,7 @@ function showFilter() {
     filter.classList.add("slide-in-bottom");
     filter.classList.remove("slide-out-bottom");
     let template = /*html*/ `
-    <input class="search" type="text" id="searchBar" placeholder="Search" onkeyup="search(this.value)>
+    <input class="search" type="text" id="searchBar" placeholder="Search">
     <h2>Genre</h2>
     <div>
     <a onclick="changeColor(this)" class="notselected"><p>House</p></a>
@@ -188,6 +188,7 @@ function showFilter() {
     <input type="range" min="1" max="200" value="100" class="slider" id="myRange" oninput="sliderValueFilter()">
     <p>BPM: <span id="bpmValueFilter"></span></p>
     </div>
+    <a href="#home" onclick="search()">Show Content</a>
     <a id="closemenu" onclick="noToggleMenu()">x</a>
     `;
     document.querySelector("#filter").innerHTML = template;
@@ -319,7 +320,8 @@ function goBack() {
 
 // Search
 
-function search(value) {
+function search() {
+    value = document.querySelector(".search").value
     let searchValue = value.toLowerCase();
     let filteredSongs = this._songs.filter(song => song.title.toLowerCase().includes(searchValue));
     console.log(searchValue);
