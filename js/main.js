@@ -205,7 +205,6 @@ function changeColor(element) {
         element.classList.remove("selected");
         element.classList.add("notselected");
     }
-
 }
 
 // Send Demo form
@@ -314,8 +313,6 @@ function noToggleMenu() {
 function goBack() {
     document.body.style.overflowY = "auto";
 }
-
-
 
 // Search
 
