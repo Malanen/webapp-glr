@@ -40,13 +40,35 @@ body {
 }
 
 #logo {
-    margin-top: 30%;
+    margin-top: 10%;
     width: 70%;
 }
 
 .some {
     width: 40%;
 }
+
+#songContent {
+  padding: 10% 8% 8% 8%;
+  background: url(../img/Golden-lady.png) no-repeat right;
+  background-attachment: fixed;
+}
+
+#songContent h1 {
+  margin: 0% 0 15% 0;
+  font-size: 30pt;
+}
+
+#songContent h3, p {
+  display: flex;
+  justify-content: left;
+  margin: 0 0 2% 0;
+}
+
+#songContent article {
+  margin: 20% 0 10% 0;
+}
+
 
 #flex1 {
     display: flex;

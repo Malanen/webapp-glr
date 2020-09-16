@@ -70,15 +70,14 @@ function appendSongs(songs) {
         console.log(song.artist);
         htmlTemplate += `
     <article>
-      <h2>${song.title}</h2>
+      <h3>${song.title}</h3>
+      <p>${song.artist}</p>
       ${song.soundcloud}
-      <h2>${song.artist}</h2>
-      <h2>${song.genre}</h2>
     </article>
     `;
 
     }
-    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate
+    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
 }
 //show more show less
 let _show = document.getElementById("showMore");
@@ -94,10 +93,9 @@ function showMore(songs) {
         console.log(song.artist);
         htmlTemplate += `
     <article>
-      <h2>${song.title}</h2>
-      ${song.soundcloud}
-      <h2>${song.artist}</h2>
-      <h2>${song.genre}</h2>
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+        ${song.soundcloud}
     </article>
     `;
 
@@ -116,15 +114,14 @@ function showLess(songs) {
         console.log(song.artist);
         htmlTemplate += `
     <article>
-      <h2>${song.title}</h2>
-      ${song.soundcloud}
-      <h2>${song.artist}</h2>
-      <h2>${song.genre}</h2>
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+        ${song.soundcloud}
     </article>
     `;
 
     }
-    document.querySelector('#songContent').innerHTML = htmlTemplate;
+    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
 }
 
 
@@ -141,10 +138,10 @@ function appendDemos(demos) {
         console.log(demo.artist);
         htmlTemplate += `
     <article>
-      <h2>${demo.title}</h2>
+      <h3>${demo.title}</h3>
       ${demo.soundcloud}
-      <h2>${demo.artist}</h2>
-      <h2>${demo.genre}</h2>
+      <p>${demo.artist}</p>
+      <p>${demo.genre}</p>
     </article>
     `;
     }
@@ -227,10 +224,9 @@ function appendFilteredsongs(songs) {
     for (const song of songs) {
         htmlTemplate += `
     <article>
-      <h2>${song.title}</h2>
-      ${song.soundcloud}
-      <h2>${song.artist}</h2>
-      <h2>${song.genre}</h2>
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+        ${song.soundcloud}
     </article>
     `;
 
