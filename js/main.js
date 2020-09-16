@@ -176,29 +176,25 @@ function showFilter() {
     filter.classList.remove("slide-out-bottom");
     let template = /*html*/ `
     <input class="search" type="text" id="searchBar" placeholder="Search">
+    <a href="#searchFilteredSongs" onclick="searchFunction(); noToggleMenu();">Show Content</a>
     <h2>Genre</h2>
     <div>
-    <a onclick="changeColor(this)" class="notselected"><p>House</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>Deep House</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>Rap</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>Tech House</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>Techno</p></a>
-    <a onclick="changeColor(this)" class="notselected"><p>Psytrance</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunction(); noToggleMenu();" class="notselected"><p>House</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Deep House'); searchFunction(); noToggleMenu();" class="notselected"><p>Deep House</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Rap'); searchFunction(); noToggleMenu();" class="notselected"><p>Rap</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Tech House'); searchFunction(); noToggleMenu();" class="notselected"><p>Tech House</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Techno'); searchFunction(); noToggleMenu();" class="notselected"><p>Techno</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Psytrance'); searchFunction(); noToggleMenu();" class="notselected"><p>Psytrance</p></a>
     </div>
-    <h2>Releases</h2>
-    <div>
-    <a onclick="changeColor(this)" class="notselected releaseBtn"><p>New Releases</p></a>
-    <a onclick="changeColor(this)" class="notselected releaseBtn"><p>Popular Releases</p></a>
-    </div>
-    <div class="slidecontainer">
-    <input type="range" min="1" max="200" value="100" class="slider" id="myRange" oninput="sliderValueFilter()">
-    <p>BPM: <span id="bpmValueFilter"></span></p>
-    </div>
-    <a href="#searchFilteredSongs" onclick="searchFunction(); noToggleMenu();">Show Content</a>
+    
     <a id="closemenu" onclick="noToggleMenu()">x</a>
     `;
     document.querySelector("#filter").innerHTML = template;
 }
+let selectedGenre = "";
+let selectedBpm = "";
+
+
 // Search
 
 function searchFunction() {
@@ -212,7 +208,7 @@ function searchFunction() {
         let filteredTitles = song.title.toLowerCase();
         let filteredArtist = song.artist.toLowerCase();
 
-        if (filteredTitles.includes(searchValue) || filteredArtist.includes(searchValue)) {
+        if ((filteredTitles.includes(searchValue) || filteredArtist.includes(searchValue)) && (song.genre === selectedGenre)) {
             filteredSearch.push(song);
         }
     }
@@ -239,15 +235,16 @@ let filterButton = document.querySelector("#filterDiv");
 filterButton.addEventListener("click", showFilter);
 
 
-function changeColor(element) {
-    if (element.classList.contains("notselected")) {
-        element.classList.remove("notselected");
+function changeColor(element, genre) {
+    let selected = document.querySelector(".selected");
+    if (selected) {
+        selected.classList.remove("selected");
+    } else {
         element.classList.add("selected");
-    } else if (element.classList.contains("selected")) {
-        element.classList.remove("selected");
-        element.classList.add("notselected");
     }
+    selectedGenre = genre;
 }
+
 
 // Send Demo form
 
@@ -290,6 +287,7 @@ function sliderValueFilter() {
     let slider = document.getElementById("myRange").value
     let output = document.getElementById("bpmValueFilter");
     output.innerHTML = slider;
+    selectedBpm = slider;
 }
 
 
