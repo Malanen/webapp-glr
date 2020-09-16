@@ -19,6 +19,7 @@ const emailRef = db.collection("email");
 
 let _selectedUserId = "";
 let _songs = [];
+
 // ========== READ ==========
 // watch the database ref for changes
 songRef.onSnapshot(function (snapshotData) {
@@ -80,7 +81,12 @@ function appendSongs(songs) {
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
 //show more show less
+let _show = document.getElementById("showMore");
+    let _showTwo = document.getElementById("showLess");
+    
 function showMore(songs) {
+    _show.style.display = "none";
+    _showTwo.style.display = "block";
     let htmlTemplate = "";
     for (let index = 3; index < _songs.length; index++) {
         let song = _songs[index];
@@ -100,6 +106,9 @@ function showMore(songs) {
 }
 
 function showLess(songs) {
+    _showTwo.style.display = "none";
+    _show.style.display = "block";
+
     let htmlTemplate = "";
     for (let index = 0; index < 3; index++) {
         let song = _songs[index];
@@ -116,30 +125,6 @@ function showLess(songs) {
 
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
-}
-
-/*function show() {
-    let show = document.getElementById("showMore");
-    let showTwo = document.getElementById("showLess")
-  if (show.style.display === "block") {
-    show.style.display = "none";
-    showTwo.style.display = "block";
-  } else if (showTwo.style.display === "block") {
-    showTwo.style.display = "none";
-    show.style.display = "block";
-  }
-} */
-   let _show = document.getElementById("showMore");
-    let _showTwo = document.getElementById("showLess");
-
-function show() {
-    if (_show.style.display === "block") {
-        _show.style.display = "none";
-        _showTwo.style.display = "block";
-} else if (_showTwo.style.display === "block"){
-    _showTwo.style.display = "none";
-    _show.style.display = "block";
-}
 }
 
 
