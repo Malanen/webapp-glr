@@ -19,6 +19,7 @@ const emailRef = db.collection("email");
 
 let _selectedUserId = "";
 let _songs = [];
+
 // ========== READ ==========
 // watch the database ref for changes
 songRef.onSnapshot(function (snapshotData) {
@@ -44,20 +45,20 @@ demoRef.onSnapshot(function (snapshotData) {
 });
 
 // loading screen 
-(function(){
+(function () {
     var loading = document.getElementById("loading"),
 
-      show = function(){
-        loading.style.display = "block";
-        setTimeout(hide, 2000); // 5 seconds
-      },
+        show = function () {
+            loading.style.display = "block";
+            setTimeout(hide, 2000); // 5 seconds
+        },
 
-      hide = function(){
-        loading.style.display = "none";
-      };
+        hide = function () {
+            loading.style.display = "none";
+        };
 
     show();
-  })();
+})();
 
 
 // append songs to the DOM
@@ -79,8 +80,13 @@ function appendSongs(songs) {
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
-
+//show more show less
+let _show = document.getElementById("showMore");
+    let _showTwo = document.getElementById("showLess");
+    
 function showMore(songs) {
+    _show.style.display = "none";
+    _showTwo.style.display = "block";
     let htmlTemplate = "";
     for (let index = 3; index < _songs.length; index++) {
         let song = _songs[index];
@@ -100,6 +106,9 @@ function showMore(songs) {
 }
 
 function showLess(songs) {
+    _showTwo.style.display = "none";
+    _show.style.display = "block";
+
     let htmlTemplate = "";
     for (let index = 0; index < 3; index++) {
         let song = _songs[index];
@@ -119,7 +128,8 @@ function showLess(songs) {
 }
 
 
-//show more show less
+
+
 
 
 
@@ -169,7 +179,7 @@ function showFilter() {
     filter.classList.add("slide-in-bottom");
     filter.classList.remove("slide-out-bottom");
     let template = /*html*/ `
-    <input class="search" type="text" id="searchBar" placeholder="Search" onkeyup="search(this.value)>
+    <input class="search" type="text" id="searchBar" placeholder="Search">
     <h2>Genre</h2>
     <div>
     <a onclick="changeColor(this)" class="notselected"><p>House</p></a>
@@ -188,6 +198,7 @@ function showFilter() {
     <input type="range" min="1" max="200" value="100" class="slider" id="myRange" oninput="sliderValueFilter()">
     <p>BPM: <span id="bpmValueFilter"></span></p>
     </div>
+    <a href="#home" onclick="search()">Show Content</a>
     <a id="closemenu" onclick="noToggleMenu()">x</a>
     `;
     document.querySelector("#filter").innerHTML = template;
@@ -316,7 +327,8 @@ function goBack() {
 
 // Search
 
-function search(value) {
+function search() {
+    value = document.querySelector(".search").value
     let searchValue = value.toLowerCase();
     let filteredSongs = this._songs.filter(song => song.title.toLowerCase().includes(searchValue));
     console.log(searchValue);
