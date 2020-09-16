@@ -82,8 +82,8 @@ function appendSongs(songs) {
 }
 //show more show less
 let _show = document.getElementById("showMore");
-    let _showTwo = document.getElementById("showLess");
-    
+let _showTwo = document.getElementById("showLess");
+
 function showMore(songs) {
     _show.style.display = "none";
     _showTwo.style.display = "block";
@@ -126,7 +126,6 @@ function showLess(songs) {
     }
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
-
 
 
 
@@ -216,7 +215,6 @@ function changeColor(element) {
         element.classList.remove("selected");
         element.classList.add("notselected");
     }
-
 }
 
 // Send Demo form
@@ -325,8 +323,6 @@ function noToggleMenu() {
 function goBack() {
     document.body.style.overflowY = "auto";
 }
-
-
 
 // Search
 
