@@ -44,10 +44,21 @@ demoRef.onSnapshot(function (snapshotData) {
 });
 
 // loading screen 
-$(window).load(function () {
-    // Animate loader off screen
-    $("#loader").fadeOut("slow");
-});
+(function(){
+    var loading = document.getElementById("loading"),
+
+      show = function(){
+        loading.style.display = "block";
+        setTimeout(hide, 2000); // 5 seconds
+      },
+
+      hide = function(){
+        loading.style.display = "none";
+      };
+
+    show();
+  })();
+
 
 // append songs to the DOM
 function appendSongs(songs) {
