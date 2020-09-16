@@ -78,7 +78,7 @@ function appendSongs(songs) {
     `;
 
     }
-    document.querySelector('#home').innerHTML = htmlTemplate;
+    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate
 }
 //show more show less
 let _show = document.getElementById("showMore");
@@ -102,7 +102,7 @@ function showMore(songs) {
     `;
 
     }
-    document.querySelector('#home').innerHTML += htmlTemplate;
+    document.querySelector('#songContent').innerHTML += htmlTemplate;
 }
 
 function showLess(songs) {
@@ -124,7 +124,7 @@ function showLess(songs) {
     `;
 
     }
-    document.querySelector('#home').innerHTML = htmlTemplate;
+    document.querySelector('#songContent').innerHTML = htmlTemplate;
 }
 
 
@@ -197,11 +197,47 @@ function showFilter() {
     <input type="range" min="1" max="200" value="100" class="slider" id="myRange" oninput="sliderValueFilter()">
     <p>BPM: <span id="bpmValueFilter"></span></p>
     </div>
-    <a href="#home" onclick="search()">Show Content</a>
+    <a href="#searchFilteredSongs" onclick="searchFunction(); noToggleMenu();">Show Content</a>
     <a id="closemenu" onclick="noToggleMenu()">x</a>
     `;
     document.querySelector("#filter").innerHTML = template;
 }
+// Search
+
+function searchFunction() {
+    let value = document.querySelector("#searchBar").value
+    console.log(value)
+    let searchValue = value.toLowerCase();
+
+    let filteredSearch = [];
+
+    for (const song of _songs) {
+        let filteredTitles = song.title.toLowerCase();
+        let filteredArtist = song.artist.toLowerCase();
+
+        if (filteredTitles.includes(searchValue) || filteredArtist.includes(searchValue)) {
+            filteredSearch.push(song);
+        }
+    }
+    appendFilteredsongs(filteredSearch);
+}
+
+function appendFilteredsongs(songs) {
+    let htmlTemplate = "";
+    for (const song of songs) {
+        htmlTemplate += `
+    <article>
+      <h2>${song.title}</h2>
+      ${song.soundcloud}
+      <h2>${song.artist}</h2>
+      <h2>${song.genre}</h2>
+    </article>
+    `;
+
+    }
+    document.querySelector('#searchFilteredSongs').innerHTML = htmlTemplate;
+}
+
 
 let filterButton = document.querySelector("#filterDiv");
 filterButton.addEventListener("click", showFilter);
@@ -322,15 +358,5 @@ function noToggleMenu() {
 }
 function goBack() {
     document.body.style.overflowY = "auto";
-}
-
-// Search
-
-function search() {
-    value = document.querySelector(".search").value
-    let searchValue = value.toLowerCase();
-    let filteredSongs = this._songs.filter(song => song.title.toLowerCase().includes(searchValue));
-    console.log(searchValue);
-    this.appendSongs(filteredSongs);
 }
 
