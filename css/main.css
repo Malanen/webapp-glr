@@ -88,7 +88,11 @@ body {
 #bannerDemo a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: bolder;
+}
+
+#bannerDemo p {
+  font-weight: 200;
 }
 
 #yourEmail {
@@ -137,6 +141,21 @@ body {
   outline: none;
   text-decoration: none;
 }
+
+.showBtn {
+    display: inline-block;
+  width: 200px;
+  padding: 8px;
+  margin: 0 0 8% 20%;
+  color: #fff;
+  font-weight: 200;
+  border: 2px solid #fff;
+  border-radius: 5%;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
+
 
 .notselected, .selected {
   display: inline-block;
