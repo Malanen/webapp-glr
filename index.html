@@ -19,6 +19,8 @@
 
 <body onhashchange="pageChange()">
 
+    <div id ="loading" style="display:none"><img id ="loader" src ="img/glrLoader.gif"></div>
+
     <div id="banner">
         <div class="tabbar">
             <a href="#home"><img id="logo" src="img/logo.png" alt="logo"></a>
@@ -29,8 +31,9 @@
                     src="img/someinstagram.png" class="some" alt="someinstagram"></a>
             <a href="https://soundcloud.com/goldenladyrecords" target="_blank"><img src="img/somesoundcloud.png"
                     class="some" alt="somesoundcloud"></a>
-
+        
         </div>
+        <h1>Newest releases</h1>
     </div>
 
 
@@ -61,7 +64,6 @@
         </div>
     </section>
 
-    <div id="loader"></div>
 
     <footer>
         <h2>Golden Lady Records</h2>
@@ -85,10 +87,6 @@
 
     <!-- Firebase Firestore (database) JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-
-    <!-- Loader jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
     <script src="js/spa.js"></script>
     <script src="js/main.js"></script>
