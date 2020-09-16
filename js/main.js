@@ -19,6 +19,7 @@ const emailRef = db.collection("email");
 
 let _selectedUserId = "";
 let _songs = [];
+
 // ========== READ ==========
 // watch the database ref for changes
 songRef.onSnapshot(function (snapshotData) {
@@ -80,7 +81,12 @@ function appendSongs(songs) {
     document.querySelector('#home').innerHTML = htmlTemplate;
 }
 //show more show less
+let _show = document.getElementById("showMore");
+let _showTwo = document.getElementById("showLess");
+
 function showMore(songs) {
+    _show.style.display = "none";
+    _showTwo.style.display = "block";
     let htmlTemplate = "";
     for (let index = 3; index < _songs.length; index++) {
         let song = _songs[index];
@@ -100,6 +106,9 @@ function showMore(songs) {
 }
 
 function showLess(songs) {
+    _showTwo.style.display = "none";
+    _show.style.display = "block";
+
     let htmlTemplate = "";
     for (let index = 0; index < 3; index++) {
         let song = _songs[index];
@@ -206,7 +215,6 @@ function changeColor(element) {
         element.classList.remove("selected");
         element.classList.add("notselected");
     }
-
 }
 
 // Send Demo form
@@ -316,4 +324,13 @@ function goBack() {
     document.body.style.overflowY = "auto";
 }
 
+// Search
+
+function search() {
+    value = document.querySelector(".search").value
+    let searchValue = value.toLowerCase();
+    let filteredSongs = this._songs.filter(song => song.title.toLowerCase().includes(searchValue));
+    console.log(searchValue);
+    this.appendSongs(filteredSongs);
+}
 
