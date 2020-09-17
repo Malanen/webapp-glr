@@ -186,7 +186,6 @@ function showFilter() {
 }
 let selectedGenre = "";
 
-
 // Search
 
 function searchFunctionGenre() {
