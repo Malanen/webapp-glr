@@ -169,7 +169,7 @@ function showFilter() {
     filter.classList.remove("slide-out-bottom");
     let template = /*html*/ `
     <input class="search" type="text" id="searchBar" placeholder="Search">
-    <a href="#searchFilteredSongs" onclick="searchFunction(); noToggleMenu();">Show Content</a>
+    <a href="#searchFilteredSongs" id="filterShowContent" onclick="searchFunction(); noToggleMenu();"><img src="/img/searchIcon.png" id="searchIcon"></a>
     <h2>Genre</h2>
     <div>
     <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>House</p></a>
@@ -185,7 +185,6 @@ function showFilter() {
     document.querySelector("#filter").innerHTML = template;
 }
 let selectedGenre = "";
-
 
 // Search
 
