@@ -138,7 +138,7 @@ function appendDemos(demos) {
     </article>
     `;
     }
-    document.querySelector('#demos').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + "<h1>Public demos</h1>"  + htmlTemplate;
+    document.querySelector('#demos').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + "<h1>Public demos</h1>" + htmlTemplate;
 }
 
 
@@ -170,7 +170,7 @@ function showFilter() {
     let template = /*html*/ `
     <input class="search" type="text" id="searchBar" placeholder="Search">
     <a href="#searchFilteredSongs" id="filterShowContent" onclick="searchFunction(); noToggleMenu();"><img src="/img/searchIcon.png" id="searchIcon"></a>
-    <h2>Genre</h2>
+    <h2>Choose a genre</h2>
     <div class="flexFilter">
         <div class="flexFilterItems">
             <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/House.png"></a>
