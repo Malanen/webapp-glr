@@ -44,10 +44,7 @@
     </section>
     <section id="sendDemo" class="page"></section>
     <section id="demos" class="page"></section>
-    <section>
-        <a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>
     <section id="searchFilteredSongs" class="page"></section>
-</section>
     <!-- Filter -->
     <div id="filterDiv">
         <a onclick="showFilter()"><img src="img/Filter-icon-sort.png" id="filter-icon"></a>
@@ -70,8 +67,8 @@
         <p>Something about us ....</p>
         <h2>Sign up for our newsletter</h2>
         <form>
-            <input type="email" id="yourEmail" placeholder="@ your email here ..." required>
-            <input type="button" id="emailBtn" value="Sign up" type="submit" onclick="createEmail(this.value)">
+            <input class="emailBtn" type="email" id="yourEmail" placeholder="@ your email here ..." required>
+            <input class="emailBtn" type="button" id="emailBtn" value="Sign up" type="submit" onclick="createEmail(this.value)">
         </form>
 
         <p id="newsLetter"></p>
