@@ -69,6 +69,47 @@ body {
   margin: 20% 0 10% 0;
 }
 
+#demos {
+  padding: 10% 8% 8% 8%;
+  background: url(../img/Golden-lady.png) no-repeat right;
+  background-attachment: fixed;
+}
+
+#demos h1 {
+  margin: 0% 0 15% 0;
+  font-size: 30pt;
+}
+
+#demos h3, p {
+  display: flex;
+  justify-content: left;
+  margin: 0 0 2% 0;
+}
+
+#demos article {
+  margin: 20% 0 10% 0;
+}
+
+#searchFilteredSongs {
+  padding: 10% 8% 8% 8%;
+  background: url(../img/Golden-lady.png) no-repeat right;
+  background-attachment: fixed;
+}
+
+#searchFilteredSongs h1 {
+  margin: 0% 0 15% 0;
+  font-size: 30pt;
+}
+
+#searchFilteredSongs h3, p {
+  display: flex;
+  justify-content: left;
+  margin: 0 0 2% 0;
+}
+
+#searchFilteredSongs article {
+  margin: 20% 0 10% 0;
+}
 
 #flex1 {
     display: flex;

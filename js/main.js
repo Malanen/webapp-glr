@@ -124,12 +124,6 @@ function showLess(songs) {
     document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
 }
 
-
-
-
-
-
-
 // append demos to the DOM
 function appendDemos(demos) {
     let htmlTemplate = "";
@@ -139,13 +133,12 @@ function appendDemos(demos) {
         htmlTemplate += `
     <article>
       <h3>${demo.title}</h3>
-      ${demo.soundcloud}
       <p>${demo.artist}</p>
-      <p>${demo.genre}</p>
+      ${demo.soundcloud}
     </article>
     `;
     }
-    document.querySelector('#demos').innerHTML = htmlTemplate;
+    document.querySelector('#demos').innerHTML = "<h1>Public demos</h1>" + htmlTemplate;
 }
 
 
@@ -179,12 +172,12 @@ function showFilter() {
     <a href="#searchFilteredSongs" onclick="searchFunction(); noToggleMenu();">Show Content</a>
     <h2>Genre</h2>
     <div>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunction(); noToggleMenu();" class="notselected"><p>House</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Deep House'); searchFunction(); noToggleMenu();" class="notselected"><p>Deep House</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Rap'); searchFunction(); noToggleMenu();" class="notselected"><p>Rap</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Tech House'); searchFunction(); noToggleMenu();" class="notselected"><p>Tech House</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Techno'); searchFunction(); noToggleMenu();" class="notselected"><p>Techno</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Psytrance'); searchFunction(); noToggleMenu();" class="notselected"><p>Psytrance</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>House</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Deep House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Deep House</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Rap'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Rap</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Tech House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Tech House</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Techno'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Techno</p></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Psytrance'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Psytrance</p></a>
     </div>
     
     <a id="closemenu" onclick="noToggleMenu()">x</a>
@@ -192,10 +185,19 @@ function showFilter() {
     document.querySelector("#filter").innerHTML = template;
 }
 let selectedGenre = "";
-let selectedBpm = "";
 
 
 // Search
+
+function searchFunctionGenre() {
+    let filteredSearch = [];
+    for (const song of _songs) {
+        if (song.genre === selectedGenre) {
+            filteredSearch.push(song)
+        }
+    }
+    appendFilteredsongs(filteredSearch);
+}
 
 function searchFunction() {
     let value = document.querySelector("#searchBar").value
@@ -208,7 +210,7 @@ function searchFunction() {
         let filteredTitles = song.title.toLowerCase();
         let filteredArtist = song.artist.toLowerCase();
 
-        if ((filteredTitles.includes(searchValue) || filteredArtist.includes(searchValue)) && (song.genre === selectedGenre)) {
+        if (filteredTitles.includes(searchValue) || filteredArtist.includes(searchValue)) {
             filteredSearch.push(song);
         }
     }
@@ -227,7 +229,7 @@ function appendFilteredsongs(songs) {
     `;
 
     }
-    document.querySelector('#searchFilteredSongs').innerHTML = htmlTemplate;
+    document.querySelector('#searchFilteredSongs').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
 }
 
 
@@ -287,7 +289,6 @@ function sliderValueFilter() {
     let slider = document.getElementById("myRange").value
     let output = document.getElementById("bpmValueFilter");
     output.innerHTML = slider;
-    selectedBpm = slider;
 }
 
 
