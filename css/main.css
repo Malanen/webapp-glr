@@ -91,7 +91,7 @@ body {
 }
 
 #searchFilteredSongs {
-  padding: 10% 8% 8% 8%;
+  padding: 2% 8% 8% 8%;
   background: url(../img/Golden-lady.png) no-repeat right;
   background-attachment: fixed;
 }
@@ -108,7 +108,7 @@ body {
 }
 
 #searchFilteredSongs article {
-  margin: 20% 0 10% 0;
+  margin: 10% 0 10% 0;
 }
 
 #flex1 {
@@ -351,8 +351,8 @@ input[type=email] {
 }
 
 .backbutton {
-  margin-right: 80%;
-  width: 10%;
+  margin-right: 85%;
+  width: 15%;
   position: relative;
   
 }
