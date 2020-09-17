@@ -51,8 +51,9 @@ body {
 }
 
 #songContent h1 {
-  margin: 0% 0 15% 0;
+  margin: 0% 0 0% 0;
   font-size: 30pt;
+  font-weight: 100;
 }
 
 #songContent h3, p {
@@ -72,8 +73,9 @@ body {
 }
 
 #demos h1 {
-  margin: 0% 0 15% 0;
+  margin: 0% 0 0% 0;
   font-size: 30pt;
+  font-weight: 100;
 }
 
 #demos h3, p {
@@ -138,6 +140,7 @@ body {
     align-items: center;
     background-position: center;
     font-size: 28px;
+    font-weight: 100;
 }
 
 #bannerDemo img {
@@ -152,6 +155,7 @@ body {
 
 #bannerDemo p {
   font-weight: 200;
+  margin: 0 0 10% 0;
 }
 
 #yourEmail {
@@ -172,12 +176,13 @@ body {
 #closeSendDemo {
       border: 1px solid grey;
     border-radius: 10%;
-    padding: 3% 3% 3% 3%;
+    padding: 2% 3% 2% 3%;
     margin: 0% 0% 0% 30%;
     position: absolute;
     outline: 0;
     background-color: #454E56;
     color: white;
+    text-decoration: none;
 }
 
 .demoBox {
@@ -195,13 +200,14 @@ body {
   margin: 20px 0 0 0;
   color: #fff;
   border: 2px solid #fff;
-  border-radius: 15px;
   text-align: center;
   outline: none;
   text-decoration: none;
-  font-weight: 100;
-  font-size: 20px;
+  font-size: 16px;
+  border-radius: 5%;
 }
+
+
 
 .showBtn {
     display: inline-block;
@@ -229,6 +235,9 @@ body {
   margin: 2% 7% 0% 7%;
 }
 
+.slidecontainer p {
+  margin: 0 0 0 15%;
+}
 
 #filterShowContent {
         border: 1px solid grey;
@@ -348,8 +357,7 @@ input[type=email] {
 }
 
 .backbutton {
-  margin-right: 85%;
-  margin-bottom: 10%;
+  margin-left: 90%;
   width: 15%;
   position: relative;
   
@@ -361,7 +369,7 @@ input[type=email] {
     width: 9%;
     border-radius: 50%;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    padding: 2.5% 3.5% 2.5% 3.5%;
+    padding: 2.5% 3% 2.5% 3%;
     margin: 2% 0 0 29%;
 }
 
