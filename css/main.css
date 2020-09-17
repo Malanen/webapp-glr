@@ -278,6 +278,10 @@ footer {
     padding: 1% 0 10% 5%;
 }
 
+#copyright {
+  margin: 10% 0 0 18%;
+}
+
 #signUp {
     padding: 5% 5% 5% 5%;
     background-color: #454E56;
