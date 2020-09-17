@@ -138,7 +138,7 @@ function appendDemos(demos) {
     </article>
     `;
     }
-    document.querySelector('#demos').innerHTML = "<h1>Public demos</h1>" + htmlTemplate;
+    document.querySelector('#demos').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + "<h1>Public demos</h1>"  + htmlTemplate;
 }
 
 
