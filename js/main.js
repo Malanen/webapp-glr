@@ -228,7 +228,7 @@ function appendFilteredsongs(songs) {
     `;
 
     }
-    document.querySelector('#searchFilteredSongs').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
+    document.querySelector('#searchFilteredSongs').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + htmlTemplate;
 }
 
 
