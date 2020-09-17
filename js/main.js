@@ -171,16 +171,22 @@ function showFilter() {
     <input class="search" type="text" id="searchBar" placeholder="Search">
     <a href="#searchFilteredSongs" id="filterShowContent" onclick="searchFunction(); noToggleMenu();"><img src="/img/searchIcon.png" id="searchIcon"></a>
     <h2>Genre</h2>
-    <div>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>House</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Deep House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Deep House</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Rap'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Rap</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Tech House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Tech House</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Techno'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Techno</p></a>
-    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Psytrance'); searchFunctionGenre(); noToggleMenu();" class="notselected"><p>Psytrance</p></a>
+    <div class="flexFilter">
+        <div class="flexFilterItems">
+            <a href="#searchFilteredSongs" onclick="changeColor(this, 'House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/House.png"></a>
+            <a href="#searchFilteredSongs" onclick="changeColor(this, 'Deep House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/Deep-House.png"></a>
+        </div>
+        <div class="flexFilterItems">
+            <a href="#searchFilteredSongs" onclick="changeColor(this, 'Rap'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/Rap.png"></a>
+            <a href="#searchFilteredSongs" onclick="changeColor(this, 'Tech House'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/Tech-House.png"></a>
+        </div>
+        <div class="flexFilterItems">
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Techno'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/Techno.png"></a>
+    <a href="#searchFilteredSongs" onclick="changeColor(this, 'Psytrance'); searchFunctionGenre(); noToggleMenu();" class="notselected"><img src="img/Psytrance.png"></a>
+        </div>
     </div>
     
-    <a id="closemenu" onclick="noToggleMenu()">x</a>
+    <a id="closemenu" onclick="noToggleMenu()"><img src="img/closeFilterIcon.png"></a>
     `;
     document.querySelector("#filter").innerHTML = template;
 }
