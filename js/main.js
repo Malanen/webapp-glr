@@ -124,12 +124,6 @@ function showLess(songs) {
     document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
 }
 
-
-
-
-
-
-
 // append demos to the DOM
 function appendDemos(demos) {
     let htmlTemplate = "";
@@ -139,13 +133,12 @@ function appendDemos(demos) {
         htmlTemplate += `
     <article>
       <h3>${demo.title}</h3>
-      ${demo.soundcloud}
       <p>${demo.artist}</p>
-      <p>${demo.genre}</p>
+      ${demo.soundcloud}
     </article>
     `;
     }
-    document.querySelector('#demos').innerHTML = htmlTemplate;
+    document.querySelector('#demos').innerHTML = "<h1>Public demos</h1>" + htmlTemplate;
 }
 
 
@@ -227,7 +220,7 @@ function appendFilteredsongs(songs) {
     `;
 
     }
-    document.querySelector('#searchFilteredSongs').innerHTML = htmlTemplate;
+    document.querySelector('#searchFilteredSongs').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
 }
 
 
