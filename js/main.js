@@ -69,15 +69,17 @@ function appendSongs(songs) {
         console.log(song.id);
         console.log(song.artist);
         htmlTemplate += `
+        
     <article>
       <h3>${song.title}</h3>
       <p>${song.artist}</p>
       ${song.soundcloud}
     </article>
+    
     `;
 
     }
-    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
+    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + "<div class='flexContainer'>" + htmlTemplate + "</div>"
 }
 //show more show less
 let _show = document.getElementById("showMore");
@@ -100,7 +102,7 @@ function showMore(songs) {
     `;
 
     }
-    document.querySelector('#songContent').innerHTML += htmlTemplate;
+    document.querySelector('.flexContainer').innerHTML += htmlTemplate;
 }
 
 function showLess(songs) {
@@ -121,7 +123,7 @@ function showLess(songs) {
     `;
 
     }
-    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + htmlTemplate;
+    document.querySelector('#songContent').innerHTML = "<h1>Newest releases</h1>" + "<div class='flexContainer'>" + htmlTemplate + "</div>"
 }
 
 // append demos to the DOM
@@ -138,7 +140,7 @@ function appendDemos(demos) {
     </article>
     `;
     }
-    document.querySelector('#demos').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + "<h1>Public demos</h1>" + htmlTemplate;
+    document.querySelector('#demos').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + "<h1>Public demos</h1>" + "<div class='flexContainer'>" + htmlTemplate + "</div>"
 }
 
 
@@ -234,7 +236,7 @@ function appendFilteredsongs(songs) {
     `;
 
     }
-    document.querySelector('#searchFilteredSongs').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + htmlTemplate;
+    document.querySelector('#searchFilteredSongs').innerHTML = '<a href="#home"><img src="img/returnbutton2.png" class="backbutton" alt="backbutton"></a>' + "<div class='flexContainer'>" + htmlTemplate;
 }
 
 

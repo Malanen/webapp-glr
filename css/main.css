@@ -228,8 +228,8 @@ body {
 }
 
 .flexFilterItems {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 50% 50%;
   justify-content: space-between;
   margin: 2% 7% 0% 7%;
 }
@@ -464,7 +464,7 @@ footer a {
     height: 100vh;
     position: fixed;
     top: 50px;
-    left: 0;
+    right: 0;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
@@ -530,7 +530,213 @@ footer a {
     opacity: 0;
   }
 }
+@-webkit-keyframes scale-in-bl {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-bl {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    opacity: 1;
+  }
+}
+.scale-in-bl {
+	-webkit-animation: scale-in-bl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-bl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
 .mobilePrestitial__wrapper {
   display: none;
+}
+
+
+@media screen and (min-width: 760px) {
+#banner {
+  height: 100vh;
+}
+#logo {
+  width: 30%;
+  margin-top: 5%;
+}
+#flex1 {
+  margin-top: 5%;
+}
+.flexContainer {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  margin-top: 5%;
+  grid-column-gap: 5%;
+}
+.flexContainer article {
+  width: 100%;
+}
+#showMore {
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+#showLess {
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+#showMore:hover {
+  font-weight: 600;
+  color: rgb(47, 47, 47);
+  background-color: white;
+  font-weight: 400;
+}
+#showLess:hover {
+  font-weight: 600;
+  color: rgb(47, 47, 47);
+  background-color: white;
+  font-weight: 400;
+}
+#demo {
+  height: 130vh;
+  margin-top: 20%;
+}
+
+#demos {
+  padding: 0 8% 8% 8%;
+}
+.backbutton {
+  width: 5%;
+}
+#bannerDemo {
+  padding: 10% 10% 0% 10%
+}
+#bannerDemo h2 {
+  margin-top: 0;
+}
+#bannerDemo p {
+  justify-content: center;
+  font-weight: 400;
+  margin-bottom: 5%;
+}
+#bannerDemo img {
+  width: 20%;
+  padding-left: 40%;
+  padding-right: 40%;
+  margin-bottom: 5%;
+}
+.demoBtn {
+  font-size: 1em;
+  padding: 2% 5% 2% 5%;
+  width: 100px;
+}
+#bannerDemo a:hover {
+  color: #2F2F2F;
+  background-color: #ffffff;
+}
+#sendDemo {
+  width: 50vw;
+}
+#demoForm h2 {
+  margin-top: 10%;
+}
+#closeSendDemo {
+  padding: 1% 1% 1% 1%
+}
+#demoForm input[type=text] {
+  width: 70%;
+  padding: 2.5% 2.5%;
+  box-sizing: border-box;
+  background-color: #454E56;
+  font-size: 1em;
+  color: white;
+  margin-bottom: 3%; 
+}
+#demoForm input[type=email] {
+  width: 70%;
+  padding: 2.5% 2.5%;
+  box-sizing: border-box;
+  background-color: #454E56;
+  font-size: 1em;
+  color: white;
+  margin-bottom: 3%; 
+}
+#genre {
+  width: 70%;
+  padding: 2.5% 2.5%;
+  box-sizing: border-box;
+  background-color: #454E56;
+  font-size: 1em;
+  color: white;
+  margin-bottom: 3%; 
+}
+.slidecontainer {
+  margin: 3% 0 7% 0;
+}
+#sendBtn {
+  padding: 1%;
+}
+#helpBtn {
+  margin: 4% 0 0 3%;
+}
+#filter {
+  width: 25vw;
+  top: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#closemenu {
+  right: 15px;
+  bottom: 15px;
+}
+#closemenu:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+#footerGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 10%
+}
+#copyright {
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 0;
+  font-size: 1.5em;
+}
+footer {
+  padding: 1% 0 5% 5%;
+}
+#yourEmail {
+  padding: 2% 2% 2% 2%;
+}
+#emailBtn {
+  padding: 2% 2% 2% 2%;
+  font-size: 1em;
+}
+#filterDiv:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+.flexFilterItems a:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
 }
