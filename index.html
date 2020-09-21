@@ -59,37 +59,38 @@
 
             <img src="img/demoMemo.png" id="demoMemo" alt="Demo icon">
             <a href="#sendDemo" id="sendDemosButton" class="demoBtn" onclick="sendDemo()"><img class="demoIcons"
-                    src="img/paperPlane.png">SEND DEMOS</a>
+                    id="sendDemoIcon" src="img/paperPlane.png">SEND DEMOS</a>
             <a href="#demos" id="discoverDemos" class="demoBtn" onclick="showDemos()"><img class="demoIcons"
-                    src="img/discover.png">WATCH DEMOS</a>
+                    id="discoverDemoIcon" src="img/discover.png">WATCH DEMOS</a>
 
         </div>
     </section>
 
     <footer>
         <div id="footerGrid">
-        <div>
-        <h2>Golden Lady Records</h2>
-        <p>Scandinavian label founded in 2020. We are an upcoming label for upcoming artists, who wants their voices to
-            be heard. We get our inspiration and motivation, from your music, so please keep em' coming! </p>
-        <h2>Sign up for our newsletter</h2>
-        <form>
-            <input class="emailBtn" type="email" id="yourEmail" placeholder="@ your email here ..." required>
-            <input class="emailBtn" type="button" id="emailBtn" value="Sign up" type="submit"
-                onclick="createEmail(this.value)">
-        </form>
-        </div>
-        <div>
-        <p id="newsLetter"></p>
+            <div>
+                <h2>Golden Lady Records</h2>
+                <p>Scandinavian label founded in 2020. We are an upcoming label for upcoming artists, who wants their
+                    voices to
+                    be heard. We get our inspiration and motivation, from your music, so please keep em' coming! </p>
+                <h2>Sign up for our newsletter</h2>
+                <form>
+                    <input class="emailBtn" type="email" id="yourEmail" placeholder="@ your email here ..." required>
+                    <input class="emailBtn" type="button" id="emailBtn" value="Sign up" type="submit"
+                        onclick="createEmail(this.value)">
+                </form>
+            </div>
+            <div>
+                <p id="newsLetter"></p>
 
-        <h2>Contact us directly</h2>
-        <p>Cellphone: <a href="tel:26710392">+45 26 71 03 92</a></p>
-        <p>Engkærgårds Allé 7A, 8340, Malling, Denmark</p>
-        <p>Email: <a href="mailto:golden-lady-records@gmail.com">Golden-lady-records@gmail.com</a></p>
-    </div>
-</div>
+                <h2>Contact us directly</h2>
+                <p>Cellphone: <a href="tel:26710392">+45 26 71 03 92</a></p>
+                <p>Engkærgårds Allé 7A, 8340, Malling, Denmark</p>
+                <p>Email: <a href="mailto:golden-lady-records@gmail.com">Golden-lady-records@gmail.com</a></p>
+            </div>
+        </div>
         <p id="copyright">&#169; Golden Lady Records 2020</p>
-        
+
     </footer>
     <!-- javascript-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->

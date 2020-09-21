@@ -362,3 +362,28 @@ function goBack() {
     document.body.style.overflowY = "auto";
 }
 
+//Responsive icon on send demo button will invert color
+let selectedIcon1 = document.getElementById("sendDemosButton");
+let demoIcon1 = document.getElementById("sendDemoIcon");
+
+//Now, we need to add an Event Listener to listen when the image gets mouse over.
+
+selectedIcon1.addEventListener('mouseover', function () {
+    demoIcon1.src = "/img/paperPlaneBlack.png"
+})
+selectedIcon1.addEventListener('mouseout', function () {
+    demoIcon1.src = "/img/paperPlane.png"
+})
+
+//Responsive icon on send demo button will invert color
+let selectedIcon2 = document.getElementById("discoverDemos");
+let demoIcon2 = document.getElementById("discoverDemoIcon");
+
+//Now, we need to add an Event Listener to listen when the image gets mouse over.
+
+selectedIcon2.addEventListener('mouseover', function () {
+    demoIcon2.src = "/img/discoverBlack.png"
+})
+selectedIcon2.addEventListener('mouseout', function () {
+    demoIcon2.src = "/img/discover.png"
+})
