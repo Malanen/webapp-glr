@@ -66,6 +66,10 @@ body {
   margin: 20% 0 10% 0;
 }
 
+#demoMemo {
+  opacity: 75%;
+}
+
 #demos {
   padding: 10% 8% 8% 8%;
   background: url(../img/Golden-lady.png) no-repeat right;
