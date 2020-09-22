@@ -313,9 +313,9 @@ input[type=email] {
 
 #helpBtn{
   color: white;
-  font-size: 1em;
+  font-size: 1.5em;
   position: absolute;
-  margin: 7.5% 0 0 3%;
+  margin: 6.7% 0 0 3%;
 }
 #sendBtn{
   color: white;

@@ -171,7 +171,7 @@ function showFilter() {
     filter.classList.remove("slide-out-bottom");
     let template = /*html*/ `
     <input class="search" type="text" id="searchBar" placeholder="Search">
-    <a href="#searchFilteredSongs" id="filterShowContent" onclick="searchFunction(); noToggleMenu();"><img src="/img/searchIcon.png" id="searchIcon"></a>
+    <a href="#searchFilteredSongs" id="filterShowContent" onclick="searchFunction(); noToggleMenu();"><img src="img/searchIcon.png" id="searchIcon"></a>
     <h2>Choose a genre</h2>
     <div class="flexFilter">
         <div class="flexFilterItems">
@@ -369,10 +369,10 @@ let demoIcon1 = document.getElementById("sendDemoIcon");
 //Now, we need to add an Event Listener to listen when the image gets mouse over.
 
 selectedIcon1.addEventListener('mouseover', function () {
-    demoIcon1.src = "/img/paperPlaneBlack.png"
+    demoIcon1.src = "img/paperPlaneBlack.png"
 })
 selectedIcon1.addEventListener('mouseout', function () {
-    demoIcon1.src = "/img/paperPlane.png"
+    demoIcon1.src = "img/paperPlane.png"
 })
 
 //Responsive icon on send demo button will invert color
@@ -382,8 +382,8 @@ let demoIcon2 = document.getElementById("discoverDemoIcon");
 //Now, we need to add an Event Listener to listen when the image gets mouse over.
 
 selectedIcon2.addEventListener('mouseover', function () {
-    demoIcon2.src = "/img/discoverBlack.png"
+    demoIcon2.src = "img/discoverBlack.png"
 })
 selectedIcon2.addEventListener('mouseout', function () {
-    demoIcon2.src = "/img/discover.png"
+    demoIcon2.src = "img/discover.png"
 })
